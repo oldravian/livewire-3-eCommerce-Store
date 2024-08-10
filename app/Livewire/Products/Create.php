@@ -46,8 +46,10 @@ class Create extends Component
         // Emit event to parent to refresh product list
         $this->dispatch('productCreated');
 
-        $this->dispatch('close-modal');
-
+        //$this->dispatch('close-modal');
+        //instead of dispatching above event, we can also use below line to run JS to close modal
+        $this->js("document.getElementById('modal-cross').click();");
+        
         // Reset individual form fields
         $this->reset(['name', 'description', 'price', 'photo', 'category']);
     }

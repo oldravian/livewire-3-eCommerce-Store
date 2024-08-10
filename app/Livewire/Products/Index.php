@@ -7,6 +7,8 @@ use Livewire\WithPagination;
 use Livewire\WithoutUrlPagination;
 use App\Models\Product;
 
+use function Laravel\Prompts\progress;
+
 class Index extends Component
 {
     use WithPagination, WithoutUrlPagination;
@@ -90,6 +92,12 @@ class Index extends Component
         }
 
         return $query;
+    }
+
+    public function deleteProduct(Product $product)
+    {
+        $product->delete();
+        $this->refreshProducts();
     }
 
     public function render()

@@ -62,7 +62,9 @@
                         @error('price') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                     </div>
                     <div class="flex items-center border-gray-200 rounded-b dark:border-gray-600">
-                        <button type="submit" class="w-full py-2 px-4 rounded" style="background-color: #D9F99D;">Upload item</button>
+                        <button type="submit" class="w-full py-2 px-4 rounded" style="background-color: #D9F99D;">Upload item
+                        <i wire:loading class="fas fa-spinner fa-spin"></i>
+                        </button>
                     </div>
                 </form>
             </div>

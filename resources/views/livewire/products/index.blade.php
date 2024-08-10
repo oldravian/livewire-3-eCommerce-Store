@@ -1,5 +1,11 @@
 <div>
-    <div class="container mx-auto lg:px-24" style="padding-top: 50px;">
+    <div class="container mx-auto lg:px-24" style="padding-top: 20px;">
+
+    <div class="text-center mb-7 py-2 px-4 rounded" style="background-color: #D9F99D;">
+    <h1 class="text-xl font-bold text-gray-900">Demo E-Commerce Experience Powered by TALL (Tailwind, Alpine, Laravel, Livewire)</h1>
+    <p class="mt-2 text-sm text-gray-600">This is just a demo page developed by <a href="https://github.com/oldravian" target="_blank" class="text-blue-500 underline">Habib</a> to demonstrate his TALL stack skills.</p>
+
+</div>
         <header class="flex flex-col lg:flex-row lg:justify-between items-center py-4 px-8 bg-white">
             <div class="w-full lg:w-1/2 mb-4 lg:mb-0">
                 @livewire('products.search')
