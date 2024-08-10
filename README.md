@@ -1,5 +1,8 @@
 This Script is live at: [http://18.216.184.16:8004/](http://18.216.184.16:8004/)
 
+# Application ScreenShot
+![home-page-screenshot](screenshots/demo.png)
+
 # Script Installation
 1. **Install Composer Dependencies**
 ```
