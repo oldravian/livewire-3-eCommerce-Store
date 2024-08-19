@@ -1,21 +1,21 @@
-<div wire:ignore.self id="medium-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full  justify-center items-center flex">
-    <div class="relative w-full max-w-3xl max-h-full">
-        <!-- Modal content -->
-        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+<div>
+    <div class="container mx-auto lg:px-24" style="padding-top: 20px;">
+        <div class="text-center mb-7 py-2 px-4 rounded" style="background-color: #D9F99D;">
+        <h1 class="text-xl font-bold text-gray-900">Demo E-Commerce Experience Powered by TALL (Tailwind, Alpine, Laravel, Livewire)</h1>
+        <p class="mt-2 text-sm text-gray-600">This is just a demo page developed by <a href="https://github.com/oldravian" target="_blank" class="text-blue-500 underline">Habib</a> to demonstrate his TALL stack skills.</p>
+        </div>
+    </div>
+
+
+    <div class=" lg:px-24">
             <!-- Modal header -->
-            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+            <div class="flex items-center justify-between p-4 md:p-5 rounded-t">
                 <h3 class="text-3xl font-medium text-gray-900 dark:text-white">
-                    Sell an item
+                    Edit Product
                 </h3>
-                <button id="modal-cross" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="medium-modal">
-                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                    </svg>
-                    <span class="sr-only">Close modal</span>
-                </button>
             </div>
             <div class="p-4 md:p-5 space-y-4">
-                <form wire:submit.prevent="submit" class="space-y-6">
+                <form wire:submit="submit" class="space-y-6">
                     <div>
                         <label for="photos" class="block text-sm font-medium text-gray-700">Upload photos</label>
                         <div class="mt-1 flex justify-center px-6 py-12 border-gray-300 rounded-md" style="border-width:1px">
@@ -26,6 +26,10 @@
                                 </label>
                                 @if ($form->photo)
                                     <p class="mt-2 text-sm text-gray-500">{{ $form->photo->getClientOriginalName() }}</p>
+                                    @elseif ($form->product->photo)
+                                    <!-- Display existing photo if no new photo is uploaded -->
+                                    <img src="{{ asset($form->product->photo) }}" alt="Existing photo" class="mt-2 w-32 h-32 object-cover rounded-md">
+                                    <p class="mt-2 text-sm text-gray-500">Current photo</p>
                                 @endif
                             </div>
                         </div>
@@ -62,12 +66,10 @@
                         @error('form.price') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
                     </div>
                     <div class="flex items-center border-gray-200 rounded-b dark:border-gray-600">
-                        <button type="submit" class="w-full py-2 px-4 rounded" style="background-color: #D9F99D;">Upload item
-                        <i wire:loading wire:target="submit" class="fas fa-spinner fa-spin"></i>
+                        <button type="submit" class="w-full py-2 px-4 rounded" style="background-color: #D9F99D;">Update item
                         </button>
                     </div>
                 </form>
             </div>
         </div>
-    </div>
 </div>

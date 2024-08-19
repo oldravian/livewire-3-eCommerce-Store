@@ -12,6 +12,9 @@
 
         <div>
         
+   
+
+
         <button class="text-gray-500 focus:outline-none"
         wire:confirm="Are you sure you want to delete this product?"
         wire:click="$parent.deleteProduct({{$product->id}})"
@@ -28,6 +31,15 @@
             <path d="M12.5349 14.5257C11.0704 15.9902 11.0704 18.3646 12.5349 19.829L18.9366 26.2307L25.3382 19.829C26.8026 18.3646 26.8026 15.9902 25.3382 14.5257C23.8737 13.0613 21.4993 13.0613 20.0349 14.5257L18.9366 15.6241L17.8382 14.5257C16.3737 13.0613 13.9993 13.0613 12.5349 14.5257Z" stroke="#171717" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             </button>
+
+            <a href="{{route('products.edit', 
+            ['product' => $product->id]
+            )}}" class="text-gray-500 focus:outline-none">
+            <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.936523" y="1.26074" width="36" height="36" rx="4" stroke="#E5E5E5"/>
+                <path d="M24.5005 10.8807C24.8028 10.5784 25.2805 10.5784 25.5828 10.8807L27.1193 12.4172C27.4216 12.7195 27.4216 13.1972 27.1193 13.4995L16.9366 23.6822L12.9974 24.5297C12.775 24.5782 12.5783 24.3815 12.6268 24.159L13.4743 20.2198L23.6569 10.0372C23.9592 9.73488 24.437 9.73488 24.7393 10.0372L24.5005 10.8807Z" stroke="#171717" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
         </div>
     </div>
 </div>

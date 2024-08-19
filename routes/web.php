@@ -16,5 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 
 use App\Livewire\Products\Index;
+use App\Livewire\Counter;
+use App\Livewire\EditProduct;
  
-Route::get('/', Index::class);
+Route::get('/', Index::class)->name('home');
+Route::get('/products/{product}', EditProduct::class)->name('products.edit');
+
+Route::get('/counter', Counter::class);
